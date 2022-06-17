@@ -57,6 +57,7 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy
+    environment: $(envName)
     pool:
       vmImage: $(vmImageName)
     strategy:
@@ -66,7 +67,7 @@ stages:
           - task: AzureFunctionApp@1
             displayName: 'Azure Functions App Deploy'
             inputs:
-              azureSubscription: $(azSubscription)
-              appType: functionAppLinux
-              appName: $(functionApp)
+              azureSubscription: 'MAIC - TEK Experts CR - v-osmend - Group#1 - DevOps Delivery (9e9e1a84-e844-4b3c-a731-23d189b43a2e)'
+              appType: 'functionAppLinux'
+              appName: 'tek-js-function-app'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
