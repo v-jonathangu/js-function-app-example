@@ -57,7 +57,7 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy
-    environment: $(envName)
+    environment: 'tek-js-function-app'
     pool:
       vmImage: $(vmImageName)
     strategy:
